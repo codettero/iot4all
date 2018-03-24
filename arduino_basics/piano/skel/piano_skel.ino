@@ -22,7 +22,7 @@ int sensorMaxValues[] = {
 
   
 void setup() {
-	// TODO 1.1: Configuram fiecare pin asociat fotorezistentelor
+  // TODO 1.1: Configuram fiecare pin asociat fotorezistentelor
 
 
 
@@ -35,8 +35,8 @@ void setup() {
  
 void loop() {
 
-	// TODO 2.1: Citim valorile date de fotorezistente si le salvam
-	// in cate o variabila
+  // TODO 2.1: Citim valorile date de fotorezistente si le salvam
+  // in cate o variabila
 
 
 

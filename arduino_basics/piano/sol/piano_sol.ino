@@ -26,8 +26,8 @@ int FOTOR4=4;
 int FOTOR5=5;
   
 void setup() {
-	//  1.1: Configuram fiecare pin asociat fotorezistentelor
-	pinMode(FOTOR1, INPUT);
+  //  1.1: Configuram fiecare pin asociat fotorezistentelor
+  pinMode(FOTOR1, INPUT);
   pinMode(FOTOR2, INPUT);
   pinMode(FOTOR3, INPUT);
   pinMode(FOTOR4, INPUT);
@@ -40,12 +40,12 @@ void setup() {
  
 void loop() {
 
-	//  2.1: Citim valorile date de fotorezistente si le salvam
-	// in cate o variabila
+  //  2.1: Citim valorile date de fotorezistente si le salvam
+  // in cate o variabila
   int v1 = analogRead(FOTOR1);
   int v2 = analogRead(FOTOR2);
   int v3 = analogRead(FOTOR3);
-	int v4 = analogRead(FOTOR4);
+  int v4 = analogRead(FOTOR4);
   int v5 = analogRead(FOTOR5);
     
   //  2.2: Verificam daca valoarea citita de la prima fotorezistenta este
@@ -74,21 +74,21 @@ void loop() {
   Serial.println(v2);
     
   if(v3>=1000){
-  	tone(buzzerPin, notes[3]);
+    tone(buzzerPin, notes[3]);
     delay(noteDuration);
-  	noTone(buzzerPin);
+    noTone(buzzerPin);
   }
   Serial.println(v3);
       
   if(v4>=500){ 
-  	tone(buzzerPin, notes[4]);
-   	delay(noteDuration);
-   	noTone(buzzerPin);
+    tone(buzzerPin, notes[4]);
+    delay(noteDuration);
+    noTone(buzzerPin);
   }
   Serial.println(v4);
       
   if(v5>=500) {
-   	tone(buzzerPin, notes[5]);
+    tone(buzzerPin, notes[5]);
     delay(noteDuration);
     noTone(buzzerPin);
   }
