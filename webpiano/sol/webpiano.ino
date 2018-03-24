@@ -11,7 +11,7 @@ const int noteDuration = 500;
 String noteMuzicale[] = {
   "DO", "RE", "MI", "FA", "SOL", "LA"};
   
-// Notele din picthes.h echivalente cu cele din noteMuzicale
+// Pitches.h notes
 int notes[] = {
   NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_G4,NOTE_A4};
 
@@ -66,9 +66,10 @@ void loop()
                    * BODY
                    */
                   client.println("<body>");
-                  
-                      /** INCEPUT
-                       * AICI PUI HTML-UL TAU
+                   
+                      /** BEGINNING
+                       * Insert your HTML code below
+                       * Don't forget to call ProcessClick()
                        */
                   
                   client.println("<h1>Play me</h1>");
@@ -86,8 +87,8 @@ void loop()
                   
                   client.println("</form>");
                   
-                      /** SFARSIT
-                       * AICI PUI HTML-UL TAU
+                      /** END
+                       * Insert your HTML code above
                        */
                   
                   client.println("</body>");
@@ -111,7 +112,7 @@ void loop()
         delay(1);      // give the web browser time to receive the data
         client.stop(); // close the connection
         
-        // Daca buzzerul trebuie sa cante, da comenzile dorite
+        // If the buzzer has to play a note, here is where you give it the instructions you need
         if (canta) {
           for (int i = 0; i < 8; ++i) {
             if (urmatoareaNota == noteMuzicale[i]) {
@@ -133,17 +134,17 @@ void ProcessClick(EthernetClient cl){
   String sirButonApasat = "GET /?note=";  // "note" este numele butonului din pagina web (atributul name)
   int indexSir =  HTTP_req.indexOf(sirButonApasat); 
   
-  if(indexSir == -1){ // nu a fost apasat un buton in request-ul curent
+  if(indexSir == -1){ // no button has been pressed in the current request
     return;
   }
   
-  int indexStart = indexSir + sirButonApasat.length(); // Inceput sir nota
+  int indexStart = indexSir + sirButonApasat.length(); // beginning of the note string
   
-  // Nota din requestul GET
+  // Note you get from the GET request
   urmatoareaNota = HTTP_req.substring(indexStart, indexStart + 3);
   urmatoareaNota.trim(); // elimina spatiile
   
-  canta = true; // da comanda buzzer
+  canta = true; // play buzzer
 }
 
    
