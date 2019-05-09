@@ -1,2 +1,2 @@
-# iot4girls
-The official repository of the IoT4Girls resources.
+# iot4all
+The official repository of the IoT4All resources.
